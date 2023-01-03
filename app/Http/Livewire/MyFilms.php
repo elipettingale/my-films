@@ -20,6 +20,7 @@ class MyFilms extends Component
     public function clearSearch()
     {
         $this->search = '';
+        $this->resetPage();
     }
 
     public function render()
