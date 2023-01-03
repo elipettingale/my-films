@@ -25,6 +25,12 @@ class MyFilms extends Component
             ->get();
     }
 
+    public function clearSearch()
+    {
+        $this->search = '';
+        $this->updatedSearch('');
+    }
+
     public function render()
     {
         return view('livewire.my-films');
