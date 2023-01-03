@@ -1,4 +1,4 @@
-<div>
+<div x-data="{ open: false }">
     <div class="mb-6">
         <div class="flex items-center">   
             <label for="simple-search" class="sr-only">Search</label>
@@ -8,7 +8,8 @@
                 </div>
                 <input wire:model="search" type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full pl-10 p-2.5" placeholder="Search" required>
             </div>
-            <button wire:click="clearSearch" type="submit" class="py-2.5 px-5 ml-2 text-sm font-medium text-white bg-red-700 rounded-lg border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Clear</button>
+            <x-button wire:click="clearSearch" color="red" >Clear</x-button>
+            <x-button @click="$dispatch('open-modal', 'addFilm')" color="green" >Add</x-button>
         </div>
     </div>
     
@@ -21,4 +22,8 @@
     <div class="mt-6">
         {{ $films->links() }}
     </div>
+
+    <x-modal name="addFilm">
+        @livewire('add-film-form')
+    </x-modal>
 </div>

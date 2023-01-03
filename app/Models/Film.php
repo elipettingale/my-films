@@ -9,6 +9,10 @@ class Film extends Model
 {
     use HasFactory;
 
+    protected $guarded = [
+        'id'
+    ];
+
     protected $dates = [
         'release'
     ];
