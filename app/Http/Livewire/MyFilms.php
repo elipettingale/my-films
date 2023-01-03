@@ -4,35 +4,28 @@ namespace App\Http\Livewire;
 
 use App\Models\Film;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class MyFilms extends Component
 {
-    public $films = [];
+    use WithPagination;
+
     public $search = '';
-
-    public function mount()
-    {
-        $this->films = Film::query()
-            ->where('user_id', auth()->user()->id)
-            ->get();
-    }
-
-    public function updatedSearch($value)
-    {
-        $this->films = Film::query()
-            ->where('user_id', auth()->user()->id)
-            ->where('title', 'LIKE', "%{$value}%")
-            ->get();
-    }
 
     public function clearSearch()
     {
         $this->search = '';
-        $this->updatedSearch('');
     }
 
     public function render()
     {
-        return view('livewire.my-films');
+        $films = Film::query()
+            ->where('user_id', auth()->user()->id)
+            ->where('title', 'LIKE', "%{$this->search}%")
+            ->paginate(4);
+
+        return view('livewire.my-films', [
+            'films' => $films
+        ]);
     }
 }
