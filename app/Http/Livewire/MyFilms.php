@@ -12,6 +12,11 @@ class MyFilms extends Component
 
     public $search = '';
 
+    public function updatedSearch()
+    {
+        $this->resetPage();
+    }
+
     public function clearSearch()
     {
         $this->search = '';
