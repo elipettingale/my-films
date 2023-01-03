@@ -3,10 +3,10 @@
 ## Run Commands
 
 ```
-./vendor/bin/sail up
+./vendor/bin/sail up -d
 sail bash
 npm install
-npm run dev
+npm run build
 php artisan migrate
 php artisan db:seed
 ```
