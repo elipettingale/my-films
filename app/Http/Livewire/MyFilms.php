@@ -7,12 +7,21 @@ use Livewire\Component;
 
 class MyFilms extends Component
 {
-    public $films = null;
+    public $films = [];
+    public $search = '';
 
     public function mount()
     {
         $this->films = Film::query()
             ->where('user_id', auth()->user()->id)
+            ->get();
+    }
+
+    public function updatedSearch($value)
+    {
+        $this->films = Film::query()
+            ->where('user_id', auth()->user()->id)
+            ->where('title', 'LIKE', "%{$value}%")
             ->get();
     }
 
