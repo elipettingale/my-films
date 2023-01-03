@@ -29,3 +29,9 @@ password
 ![Screenshot 2](https://raw.githubusercontent.com/elipettingale/my-films/master/demo/2.png)
 
 ![Screenshot 3](https://raw.githubusercontent.com/elipettingale/my-films/master/demo/3.png)
+
+![Screenshot 4](https://raw.githubusercontent.com/elipettingale/my-films/master/demo/4.png)
+
+![Screenshot 5](https://raw.githubusercontent.com/elipettingale/my-films/master/demo/5.png)
+
+![Screenshot 6](https://raw.githubusercontent.com/elipettingale/my-films/master/demo/6.png)
