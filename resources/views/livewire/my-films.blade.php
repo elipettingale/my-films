@@ -17,4 +17,8 @@
             @livewire('film', ['film' => $film], key($film->id))
         @endforeach
     </div>
+
+    <div class="mt-6">
+        {{ $films->links() }}
+    </div>
 </div>
